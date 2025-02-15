@@ -19,7 +19,7 @@ function SignIn() {
 		if (signedUp) {
 			setTimeout(() => {
 				navigate("/budget");
-			}, 1000);
+			}, 2500);
 		}
 	}, [signedUp, navigate]);
 
