@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("react-datepicker/dist/react-datepicker.css");
+@import "tailwindcss";
+
+/* Theme variables */
+@theme {
+	--font-inter: "inter", serif;
+
+	--drop-shadow-custom: 0px 5px 10px rgba(53, 53, 53, 0.1);
+
+	--color-primary: #ffffff;
+	--color-secondary: #2d3142;
+	--color-accent: #ef8354;
+
+	--animate-loader: loader 2s linear infinite;
+	@keyframes loader {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+/* Root variables */
+:root {
+	--primary: #ffffff;
+	--secondary: #2d3142;
+	--accent: #ef8354;
+}
+
+/* Custom styles for react-datepicker */
+::-webkit-scrollbar {
+	background: var(--primary);
+	width: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--accent);
+	height: 50px;
+}
+
+.react-datepicker {
+	background-color: var(--primary);
+	color: var(--secondary);
+}
+
+.react-datepicker__header {
+	background-color: var(--secondary);
+	color: var(--primary);
+}
+
+.react-datepicker__current-month {
+	color: var(--primary);
+}
+.react-datepicker__day-name {
+	color: var(--primary);
+}
+.react-datepicker__day {
+	color: var(--secondary);
+}
+.react-datepicker__time-name {
+	color: var(--accent);
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+	background-color: var(--accent);
+	color: var(--primary);
+}
+
+.react-datepicker__navigation--icon {
+	background-color: var(--accent);
+}
+.react-datepicker__navigation--previous,
+.react-datepicker__navigation--next {
+	border-color: var(--secondary);
+	color: var(--accent);
+}
+
+.react-datepicker__navigation--previous:hover,
+.react-datepicker__navigation--next:hover {
+	border-color: var(--accent);
+}
+
+/* Hide the arrows in input type number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
