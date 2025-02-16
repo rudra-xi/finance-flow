@@ -31,9 +31,9 @@ database(); // Connect to database
 server.options("*", cors());
 
 // Define API routes
-server.use("/auth", authRoute); // http://finance-flow-backend.onrender.com/auth/
-server.use("/budget", budgetRoute); // http://finance-flow-backend.onrender.com/budget/
-server.use("/expense", expenseRoute); // http://finance-flow-backend.onrender.com/expense/
+server.use("/endpoint/auth", authRoute); // http://finance-flow-backend.onrender.com/endpoint/auth/
+server.use("/endpoint/budget", budgetRoute); // http://finance-flow-backend.onrender.com/endpoint/budget/
+server.use("/endpoint/expense", expenseRoute); // http://finance-flow-backend.onrender.com/endpoint/expense/
 
 // Serve static files from the frontend's build folder
 const __dirname = path.resolve();

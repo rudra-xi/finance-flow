@@ -33,14 +33,14 @@ function SignIn() {
 			let response;
 			if (currentState === "Sign In") {
 				// signin API call
-				response = await axios.post(`${endpointURL}/auth/signin`, {
+				response = await axios.post(`${endpointURL}/endpoint/auth/signin`, {
 					email: data.email,
 					password: data.password,
 				});
 			} else {
 				// Register API call
 				response = await axios.post(
-					`${endpointURL}/auth/register`,
+					`${endpointURL}/endpoint/auth/register`,
 					{
 						name: data.name,
 						email: data.email,

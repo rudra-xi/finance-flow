@@ -15,7 +15,7 @@ function Navbar() {
 			if (token) {
 				try {
 					await axios.post(
-						`${endpointURL}/auth/signout`,
+						`${endpointURL}/endpoint/auth/signout`,
 						{},
 						{
 							headers: {

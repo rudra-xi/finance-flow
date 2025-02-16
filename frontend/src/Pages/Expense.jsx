@@ -22,7 +22,7 @@ function Expense() {
 			const token = localStorage.getItem("token");
 
 			// Make a GET request to the backend API with the token in the headers
-			const response = await axios.get(`${endpointURL}/expense`, {
+			const response = await axios.get(`${endpointURL}/endpoint/expense`, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},
@@ -88,7 +88,7 @@ function Expense() {
 			const token = localStorage.getItem("token");
 
 			// Make a DELETE request to the backend API with the token in the headers
-			await axios.delete(`${endpointURL}/expense/${id}`, {
+			await axios.delete(`${endpointURL}/endpoint/expense/${id}`, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},

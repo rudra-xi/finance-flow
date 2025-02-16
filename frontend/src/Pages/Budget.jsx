@@ -29,7 +29,7 @@ function Budget() {
 	const fetchBudget = async () => {
 		try {
 			const token = localStorage.getItem("token");
-			const response = await axios.get(`${endpointURL}/budget`, {
+			const response = await axios.get(`${endpointURL}/endpoint/budget`, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},
@@ -46,7 +46,7 @@ function Budget() {
 	const fetchExpenses = async () => {
 		try {
 			const token = localStorage.getItem("token");
-			const response = await axios.get(`${endpointURL}/expense`, {
+			const response = await axios.get(`${endpointURL}/endpoint/expense`, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},
@@ -90,7 +90,7 @@ function Budget() {
 				description,
 			};
 			const response = await axios.post(
-				`${endpointURL}/expense`,
+				`${endpointURL}/endpoint/expense`,
 				newExpense,
 				{
 					headers: {
@@ -117,7 +117,7 @@ function Budget() {
 		try {
 			const token = localStorage.getItem("token");
 			await axios.post(
-				`${endpointURL}/budget`,
+				`${endpointURL}/endpoint/budget`,
 				{ total: parseFloat(newBudgetTotal) },
 				{
 					headers: {
@@ -138,7 +138,7 @@ function Budget() {
 		try {
 			const token = localStorage.getItem("token");
 			await axios.post(
-				`${endpointURL}/budget/reset`,
+				`${endpointURL}/endpoint/budget/reset`,
 				{},
 				{
 					headers: {
