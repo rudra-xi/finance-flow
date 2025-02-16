@@ -1,7 +1,7 @@
 import express from "express";
+import path from "path";
 import dotenv from "dotenv";
 import cors from "cors";
-import path from "path";
 import database from "./database.js";
 import authRoute from "./Routes/authRoute.js";
 import budgetRoute from "./Routes/budgetRoute.js";
@@ -30,22 +30,18 @@ database(); // Connect to database
 // Handle preflight requests
 server.options("*", cors());
 
-// Serve static files from the frontend build directory
-const __dirname = path.resolve();
-server.use(express.static(path.join(__dirname, "frontend", "build")));
-
-server.get("/", (req, res) => {
-	res.send("Backend Running");
-});
-
-// Define routes
+// Define API routes
 server.use("/auth", authRoute); // http://finance-flow-backend.onrender.com/auth/
 server.use("/budget", budgetRoute); // http://finance-flow-backend.onrender.com/budget/
 server.use("/expense", expenseRoute); // http://finance-flow-backend.onrender.com/expense/
 
-// Catch-all route to serve index.html for any requests not matching API routes
+// Serve static files from the frontend's build folder
+const __dirname = path.resolve();
+server.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+// Serve the frontend's index.html for all other routes
 server.get("*", (req, res) => {
-	res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+	res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 
 server.listen(PORT, () => {
