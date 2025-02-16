@@ -99,7 +99,8 @@ function Budget() {
 				}
 			);
 			setExpenses([...expenses, response.data]);
-			fetchBudget();
+			calculateExpenseTotal([...expenses, response.data]);
+			calculateBalance(budget.total, [...expenses, response.data]);
 			setTitle("");
 			setAmount("");
 			setDate(null);
@@ -164,10 +165,10 @@ function Budget() {
 			>
 				<Title title={"Budget Overview"} />
 				<div className="flex sm:justify-evenly justify-between items-center pb-3">
-					<div className="flex items-center flex-col">
+				<div className="flex items-center flex-col">
 						<p className="font-semibold text-lg sm:text-xl">
 							{rupee}
-							{balanceLeft}
+							{budget.total}
 						</p>
 						<p className="font-semibold text-lg">
 							Balance Left
@@ -187,7 +188,7 @@ function Budget() {
 					<button
 						onClick={() => {
 							setShowPrompt(true);
-							setIsPromptVisible(true); // Show the PromptCard
+							setIsPromptVisible(true);
 						}}
 						className="text-secondary font-semibold bg-accent w-40 p-3 hover:scale-95 transition-all duration-300 cursor-pointer"
 					>
@@ -252,11 +253,11 @@ function Budget() {
 						onConfirm={(newBudgetTotal) => {
 							handleUpdateBalance(newBudgetTotal);
 							setShowPrompt(false);
-							setIsPromptVisible(false); // Hide the PromptCard
+							setIsPromptVisible(false);
 						}}
 						onCancel={() => {
 							setShowPrompt(false);
-							setIsPromptVisible(false); // Hide the PromptCard
+							setIsPromptVisible(false);
 						}}
 					/>
 				</div>
@@ -265,5 +266,4 @@ function Budget() {
 	);
 }
 
-// Export the Budget component
 export default Budget;
