@@ -8,8 +8,8 @@ function AppContextProvider(props) {
 	const rupee = "₹";
 	const navigate = useNavigate();
 	const endpointURL =
-		import.meta.env.VITE_endpoint_BASE_URL ||
-		import.meta.env.VITE_RENDER_BACKEND_URL;
+		import.meta.env.VITE_RENDER_BACKEND_URL ||
+		import.meta.env.VITE_endpoint_BASE_URL;
 
 	// State for search functionality
 	const [currentState, setCurrentState] = useState("Sign In");
