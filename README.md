@@ -2,8 +2,6 @@
 
 FinanceFlow is a **MERN stack** (MongoDB, Express.js, React, Node.js) application designed to help users manage their budgets and expenses efficiently. With an intuitive user interface and robust backend, FinanceFlow simplifies personal finance management by allowing users to track their spending, set budget limits, and gain insights into their financial habits.
 
-![FinanceFlow Preview](https://imgur.com/a/pRX7CBa.gif) <!-- Add the GIF here -->
-
 ---
 
 ## Features
