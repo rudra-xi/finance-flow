@@ -1,8 +1,5 @@
 import React from "react";
-import logo from "../Assets/logo.svg";
-import instagram from "../Assets/instagram.svg";
-import github from "../Assets/github.svg";
-import { footerText } from "../Assets";
+import { footerText, instagram, github, logo } from "../Assets";
 
 function Footer() {
 	return (
@@ -14,10 +11,10 @@ function Footer() {
 					{/* Logo and title */}
 					<div className="flex items-start gap-4 font-extrabold text-3xl pb-2">
 						<img src={logo} alt="logo" className="w-8" />
-						<p className="sm:block hidden">FinanceFlow</p>
+						<p className="lg:block hidden">FinanceFlow</p>
 					</div>
 					{/* Footer text */}
-					<p className="text-xs w-[400px] hidden sm:block">
+					<p className="text-xs w-[400px] hidden lg:block">
 						{footerText}
 					</p>
 				</div>
@@ -52,7 +49,7 @@ function Footer() {
 			</div>
 			{/* Footer bottom text */}
 			<div className="flex text-xs justify-center py-5 text-center">
-				<p>&copy; 2025 Rudra-Xi. All rights reserved.</p>
+				<p>&copy; 2025 rudra-xi. All rights reserved.</p>
 			</div>
 		</footer>
 	);

@@ -108,16 +108,16 @@ function Expense() {
 	return (
 		<section>
 			<Title title={"Expense Details"} />
-			<div className="sm:flex sm:flex-row flex-col items-center justify-center gap-3">
+			<div className="lg:flex lg:flex-row flex-col items-center justify-center gap-3">
 				<div className="flex items-center justify-center">
 					<SearchBar onSearch={handleSearch} />{" "}
 					{/* Pass handleSearch as a prop */}
 				</div>
-				<div className="sm:mt-0 mt-5 flex justify-center">
+				<div className="lg:mt-0 mt-5 flex justify-center">
 					<select
 						value={sortOption}
 						onChange={(e) => handleSort(e.target.value)}
-						className="flex border-2 bg-primary outline-none border-accent text-sm p-2 h-10"
+						className="flex border-2 outline-none border-accent text-sm p-2 h-10"
 					>
 						<option value="new">Newest</option>
 						<option value="date">Sort by Date</option>

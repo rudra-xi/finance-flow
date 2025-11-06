@@ -84,7 +84,7 @@ function SignIn() {
 										id="name"
 										name="name"
 										required
-										className="border-2 border-accent w-90 sm:w-96 h-9 pl-3 outline-none"
+										className="border-2 border-accent w-90 lg:w-96 h-9 pl-3 outline-none"
 									/>
 								</div>
 							) : (
@@ -102,7 +102,7 @@ function SignIn() {
 									id="email"
 									name="email"
 									required
-									className="border-2 border-accent w-90 sm:w-96 h-9 pl-3 outline-none"
+									className="border-2 border-accent w-90 lg:w-96 h-9 pl-3 outline-none"
 								/>
 							</div>
 							<div className="flex flex-col">
@@ -117,10 +117,10 @@ function SignIn() {
 									id="password"
 									name="password"
 									required
-									className="border-2 border-accent w-90 sm:w-96 h-9 pl-3 outline-none"
+									className="border-2 border-accent w-90 lg:w-96 h-9 pl-3 outline-none"
 								/>
 							</div>
-							<div className="pt-1 sm:pr-0 pr-6 text-right text-sm">
+							<div className="pt-1 lg:pr-0 pr-6 text-right text-sm">
 								{currentState === "Sign In" ? (
 									<p
 										className="cursor-pointer hover:underline"

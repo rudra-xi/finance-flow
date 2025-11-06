@@ -160,13 +160,13 @@ function Budget() {
 				className={
 					isPromptVisible
 						? "backdrop-blur-sm transition duration-300 ease-in-out"
-						: "transition duration-300 ease-in-out"
+						: "transition ease-in-out"
 				}
 			>
 				<Title title={"Budget Overview"} />
-				<div className="flex sm:justify-evenly justify-between items-center pb-3">
+				<div className="flex lg:justify-evenly justify-between items-center pb-3">
 				<div className="flex items-center flex-col">
-						<p className="font-semibold text-lg sm:text-xl">
+						<p className="font-semibold text-lg lg:text-xl">
 							{rupee}
 							{budget.total}
 						</p>
@@ -175,7 +175,7 @@ function Budget() {
 						</p>
 					</div>
 					<div className="flex items-center flex-col">
-						<p className="font-semibold text-lg sm:text-xl">
+						<p className="font-semibold text-lg lg:text-xl">
 							{rupee}
 							{expenseTotal}
 						</p>
@@ -184,22 +184,22 @@ function Budget() {
 						</p>
 					</div>
 				</div>
-				<div className="flex items-center justify-center py-5 gap-[2px]">
+				<div className="flex items-center justify-center py-5 gap-1">
 					<button
 						onClick={() => {
 							setShowPrompt(true);
 							setIsPromptVisible(true);
 						}}
-						className="text-secondary font-semibold bg-accent w-40 p-3 hover:scale-95 transition-all duration-300 cursor-pointer"
+						className="font-semibold bg-accent w-40 p-3 hover:scale-95 transition-all duration-300 cursor-pointer"
 					>
 						Update Balance
 					</button>
-					<div className="text-primary bg-secondary p-3 cursor-pointer">
+					<div className="p-3 cursor-pointer border-2 border-accent">
 						<img
 							onClick={handleResetBudget}
 							src={reset}
 							alt="reset icon"
-							className="w-6 hover:rotate-180 transition-all duration-300 cursor-pointer"
+							className="w-5 hover:rotate-180 transition-all duration-300 cursor-pointer"
 						/>
 					</div>
 				</div>
@@ -213,7 +213,7 @@ function Budget() {
 						required
 						value={title}
 						onChange={(e) => setTitle(e.target.value)}
-						className="border-2 border-accent w-[360px] sm:w-[500px] max-w-md h-10 pl-3 outline-none"
+						className="border-2 border-accent w-[360px] lg:w-[500px] max-w-md h-10 pl-3 outline-none"
 					/>
 					<div className="flex flex-row gap-3">
 						<input
@@ -222,7 +222,7 @@ function Budget() {
 							required
 							value={amount}
 							onChange={(e) => setAmount(e.target.value)}
-							className="border-2 border-accent w-[200px] sm:w-[276px] h-10 pl-3 outline-none"
+							className="border-2 border-accent w-[200px] lg:w-[276px] h-10 pl-3 outline-none"
 						/>
 						<CustomDatePicker
 							selectedDate={date}
@@ -234,13 +234,13 @@ function Budget() {
 						placeholder="Description [Optional]"
 						value={description}
 						onChange={(e) => setDescription(e.target.value)}
-						className="border-2 border-accent w-[360px] sm:w-[500px] max-w-md h-20 pl-3 outline-none"
+						className="border-2 border-accent w-[360px] lg:w-[500px] max-w-md h-20 pl-3 outline-none"
 					/>
 				</div>
 				<div className="flex items-center justify-center pt-5">
 					<button
 						type="submit"
-						className="text-secondary font-semibold bg-accent w-40 p-3 hover:scale-95 transition-all duration-300 cursor-pointer"
+						className="font-semibold bg-accent w-40 p-3 hover:scale-95 transition-all duration-300 cursor-pointer"
 					>
 						Add Expense
 					</button>
@@ -248,7 +248,7 @@ function Budget() {
 			</form>
 
 			{showPrompt && (
-				<div className="fixed inset-0 z-10 flex items-center justify-center bg-secondary/50 bg-opacity-50 backdrop-blur-sm transition duration-300 ease-in-out w-full h-full">
+				<div className="fixed inset-0 z-10 flex items-center justify-center bg-opacity-50 backdrop-blur-xl transition duration-300 ease-in-out w-full h-full">
 					<PromptCard
 						onConfirm={(newBudgetTotal) => {
 							handleUpdateBalance(newBudgetTotal);

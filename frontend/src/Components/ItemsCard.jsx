@@ -16,7 +16,7 @@ function ItemsCard({ title, date, amount, description, onDelete, id }) {
 	};
 
 	return (
-		<div className="w-[400px] h-44 p-2 drop-shadow-custom border-y border-accent bg-primary">
+		<div className="w-[400px] h-44 p-2 drop-shadow-custom border-y border-accent">
 			<div className="flex flex-col px-5 pt-3">
 				<h2 className="text-3xl font-bold capitalize">{title}</h2>
 				<p className="font-medium text-sm pr-6 capitalize pt-2">
