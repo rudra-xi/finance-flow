@@ -7,7 +7,7 @@ FinanceFlow is a **MERN stack** (MongoDB, Express.js, React, Node.js) applicatio
 ***Old FinanceFlow Preview***
 ![Old FinanceFlow Preview](./frontend/src/Assets/previewOld.png)
 
-**Live Demo:** [memoir-veritas](https://memoir-veritas.vercel.app/)
+**Live Demo:** [FinanceFlow](https://finance-flow-xuyt.onrender.com/#/)
 
 ---
 
