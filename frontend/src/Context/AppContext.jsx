@@ -4,6 +4,18 @@ import { useNavigate } from "react-router-dom";
 // Create context
 export const AppContext = createContext();
 
+// --- THEME HELPER FUNCTION ---
+// Function to get the initial theme from localStorage or default to 'dark'
+const getInitialTheme = () => {
+	// Check if a theme preference is saved in localStorage
+	if (typeof window !== "undefined" && window.localStorage.getItem("theme")) {
+		return window.localStorage.getItem("theme");
+	}
+	// Fallback to 'dark' theme if no preference is found
+	return "dark";
+};
+// -----------------------------
+
 function AppContextProvider(props) {
 	const rupee = "₹";
 	const navigate = useNavigate();
@@ -19,8 +31,26 @@ function AppContextProvider(props) {
 		const savedLogin = localStorage.getItem("signedUp");
 		return savedLogin ? JSON.parse(savedLogin) : false;
 	});
-
 	const [expenses, setExpenses] = useState([]);
+
+	// --- THEME STATE AND TOGGLE FUNCTION ---
+	const [theme, setTheme] = useState(getInitialTheme);
+
+	const toggleTheme = () => {
+		setTheme((prevTheme) => {
+			const newTheme = prevTheme === "light" ? "dark" : "light";
+			localStorage.setItem("theme", newTheme); // Persist the theme
+			return newTheme;
+		});
+	};
+
+	// Effect to apply the theme class to the document body
+	useEffect(() => {
+		document.body.className = ""; // Clear existing classes
+		// Add the class based on the current theme state (e.g., 'dark-theme' or 'light-theme')
+		document.body.classList.add(`${theme}-theme`);
+	}, [theme]);
+	// ---------------------------------------
 
 	// Sync signedUp state with localStorage
 	useEffect(() => {
@@ -42,6 +72,10 @@ function AppContextProvider(props) {
 		setExpenses,
 		search,
 		setSearch,
+		// --- ADD THEME VALUES HERE ---
+		theme,
+		toggleTheme,
+		// -----------------------------
 	};
 
 	return (

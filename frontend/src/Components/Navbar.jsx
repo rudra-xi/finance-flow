@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import { logo, logout, moon, sun } from "../Assets";
 import { Link } from "react-router-dom";
 import { AppContext } from "../Context/AppContext";
-import axios from "axios"; // Import axios for API calls
+import axios from "axios";
 import toast from "react-hot-toast";
 
 function Navbar() {
-  const { navigate, signedUp, setSignedUp, endpointURL } =
+  // --- ADD theme AND toggleTheme here ---
+  const { navigate, signedUp, setSignedUp, endpointURL, theme, toggleTheme } =
     useContext(AppContext);
+  // -------------------------------------
 
   const handleLogout = async () => {
     try {
@@ -33,9 +35,9 @@ function Navbar() {
           }
         }
       }
-      localStorage.removeItem("token"); // Clear the token
-      setSignedUp(false); // Update state
-      navigate("/"); // Redirect to home page
+      localStorage.removeItem("token");
+      setSignedUp(false);
+      navigate("/");
     } catch (err) {
       console.error("Logout failed:", err.message);
       toast.error("Logout failed. Please try again.");
@@ -45,7 +47,7 @@ function Navbar() {
   return (
     <nav className="w-full fixed top-0 left-0 z-50">
       <div
-        className={`relative py-2 px-5 bg-primary flex items-center justify-between ${
+        className={`relative py-2 px-5 flex items-center justify-between ${
           signedUp === false ? "justify-center" : ""
         }`}
       >
@@ -79,11 +81,14 @@ function Navbar() {
               About Us
             </Link>
 
+            {/* --- THEME TOGGLE LOGIC HERE --- */}
             <img
-              src={moon}
+              src={theme === "light" ? moon : sun} // Show moon icon for light theme, sun for dark theme
               alt="theme toggle"
               className="w-5 cursor-pointer hover:scale-95 transition-all duration-300"
+              onClick={toggleTheme} // Call the toggle function
             />
+            {/* ------------------------------- */}
 
             <img
               src={logout}
