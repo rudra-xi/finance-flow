@@ -2,175 +2,195 @@
 @import url("react-datepicker/dist/react-datepicker.css");
 @import "tailwindcss";
 
-/* Theme variables */
-@theme {
-	--font-inter: "inter", serif;
-
-	--drop-shadow-custom: 0px 5px 10px rgba(53, 53, 53, 0.1);
-
-	--color-primary: #ffffff;
-	--color-secondary: #2d3142;
-	--color-accent: #ef8354;
-
-	--animate-loader: loader 2s linear infinite;
-	@keyframes loader {
-		0% {
-			transform: rotate(0deg);
-		}
-		100% {
-			transform: rotate(360deg);
-		}
-	}
-}
-
 /* Root variables */
 :root {
-	--primary: #ffffff;
-	--secondary: #2d3142;
-	--accent: #ef8354;
-	--duration: 2s;
+  --primary: #272e4f;
+  --secondary: #ffffff;
+  --accent: #ef8354;
+
+  --duration: 2s;
+}
+
+/* Light Theme Variables */
+.light-theme {
+  --primary: #ffffff; /* Light background */
+  --secondary: #272e4f; /* Dark text/primary color */
+  --accent: #ef8354; /* Accent color remains the same */
+}
+
+/* Dark Theme Variables (Your original :root moved here for clarity) */
+.dark-theme {
+  --primary: #272e4f; /* Dark background */
+  --secondary: #ffffff; /* Light text/secondary color */
+  --accent: #ef8354;
+}
+
+/* Theme variables */
+@theme {
+  --font-inter: "inter", serif;
+
+  --drop-shadow-custom: 0px 5px 10px rgba(53, 53, 53, 0.1);
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+
+  --animate-loader: loader 2s linear infinite;
+  @keyframes loader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+body {
+  background-color: var(--primary); 
+  color: var(--secondary);
 }
 
 /* Custom styles for react-datepicker */
 ::-webkit-scrollbar {
-	background: var(--primary);
-	width: 5px;
+  background: var(--primary);
+  width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-	background-color: var(--accent);
-	height: 50px;
+  background-color: var(--accent);
+  height: 50px;
 }
 
 /* custom react-datepicker  */
 .react-datepicker {
-	background-color: var(--primary);
-	color: var(--secondary);
+  background-color: var(--primary);
+  color: var(--secondary);
 }
 .react-datepicker__header {
-	background-color: var(--secondary);
-	color: var(--primary);
+  background-color: var(--secondary);
+  color: var(--primary);
 }
 .react-datepicker__current-month {
-	color: var(--primary);
+  color: var(--primary);
 }
 .react-datepicker__day-name {
-	color: var(--primary);
+  color: var(--primary);
 }
 .react-datepicker__day {
-	color: var(--secondary);
+  color: var(--secondary);
 }
 .react-datepicker__time-name {
-	color: var(--accent);
+  color: var(--accent);
 }
 .react-datepicker__day--selected,
 .react-datepicker__day--keyboard-selected {
-	background-color: var(--accent);
-	color: var(--primary);
+  background-color: var(--accent);
+  color: var(--primary);
 }
 .react-datepicker__navigation--icon {
-	background-color: var(--accent);
+  background-color: var(--accent);
 }
 .react-datepicker__navigation--previous,
 .react-datepicker__navigation--next {
-	border-color: var(--secondary);
-	color: var(--accent);
+  border-color: var(--secondary);
+  color: var(--accent);
 }
 .react-datepicker__navigation--previous:hover,
 .react-datepicker__navigation--next:hover {
-	border-color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* Hide the arrows in input type number */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 input[type="number"] {
-	-moz-appearance: textfield;
-	appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 /* custom Loader animation */
 .loader {
-	width: 44px;
-	height: 44px;
-	position: relative;
+  width: 44px;
+  height: 44px;
+  position: relative;
 }
 
 .loader:before {
-	content: "";
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	position: absolute;
-	display: block;
-	background: var(--accent);
-	top: 37px;
-	left: 19px;
-	transform: translate(-18px, -18px);
-	animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86)
-		infinite;
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  background: var(--accent);
+  top: 37px;
+  left: 19px;
+  transform: translate(-18px, -18px);
+  animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86)
+    infinite;
 }
 
 .loader svg {
-	display: block;
-	width: 100%;
-	height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .loader svg circle {
-	fill: none;
-	stroke: var(--secondary);
-	stroke-width: 10px;
-	stroke-linejoin: round;
-	stroke-linecap: round;
+  fill: none;
+  stroke: var(--secondary);
+  stroke-width: 10px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
 }
 
 .loader svg circle {
-	stroke-dasharray: 150 50 150 50;
-	stroke-dashoffset: 75;
-	animation: pathCircle var(--duration)
-		cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  stroke-dasharray: 150 50 150 50;
+  stroke-dashoffset: 75;
+  animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86)
+    infinite;
 }
 
 @keyframes dotRect {
-	25% {
-		transform: translate(0, 0);
-	}
+  25% {
+    transform: translate(0, 0);
+  }
 
-	50% {
-		transform: translate(18px, -18px);
-	}
+  50% {
+    transform: translate(18px, -18px);
+  }
 
-	75% {
-		transform: translate(0, -36px);
-	}
+  75% {
+    transform: translate(0, -36px);
+  }
 
-	100% {
-		transform: translate(-18px, -18px);
-	}
+  100% {
+    transform: translate(-18px, -18px);
+  }
 }
 
 @keyframes pathCircle {
-	25% {
-		stroke-dashoffset: 125;
-	}
+  25% {
+    stroke-dashoffset: 125;
+  }
 
-	50% {
-		stroke-dashoffset: 175;
-	}
+  50% {
+    stroke-dashoffset: 175;
+  }
 
-	75% {
-		stroke-dashoffset: 225;
-	}
+  75% {
+    stroke-dashoffset: 225;
+  }
 
-	100% {
-		stroke-dashoffset: 275;
-	}
+  100% {
+    stroke-dashoffset: 275;
+  }
 }
 
 .loader {
-	display: inline-block;
-	margin: 0 16px;
+  display: inline-block;
+  margin: 0 16px;
 }
