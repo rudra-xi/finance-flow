@@ -12,7 +12,7 @@ function CustomDatePicker({ setSelectedDate, selectedDate }) {
 				popperPlacement="bottom-end"
 				dateFormat="dd-MM-yyyy"
 				dateFormatCalendar="LLLL YYYY"
-				className="border-2 outline-none border-accent w-[148px] sm:w-[160px] h-10 pl-3"
+				className="border-2 outline-none border-accent w-[148px] lg:w-[160px] h-10 pl-3"
 			/>
 			<img
 				src={calender}

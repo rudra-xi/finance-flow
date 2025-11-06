@@ -4,7 +4,7 @@ import { about_img, aboutText, mission_img, missionText } from "../Assets/";
 
 function About() {
 	return (
-		<section className="sm:px-35 md:px-10 text-justify md:text-justify sm:text-left">
+		<section className="lg:px-35 md:px-10 text-justify md:text-justify lg:text-left">
 			<div>
 				{/* About Us Section */}
 				<Title title={"About Us"} />

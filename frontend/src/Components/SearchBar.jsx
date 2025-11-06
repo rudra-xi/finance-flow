@@ -5,7 +5,7 @@ import { search_icon } from "../Assets";
 function SearchBar({ onSearch }) {
 	return (
 		<div className="text-center">
-			<div className="inline-flex items-center justify-center text-sm border-2 border-accent w-80 sm:w-96 px-5 h-10">
+			<div className="inline-flex items-center justify-center text-sm border-2 border-accent w-80 lg:w-96 px-5 h-10">
 				<input
 					type="text"
 					placeholder="Search"
