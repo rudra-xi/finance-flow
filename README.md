@@ -2,6 +2,13 @@
 
 FinanceFlow is a **MERN stack** (MongoDB, Express.js, React, Node.js) application designed to help users manage their budgets and expenses efficiently. With an intuitive user interface and robust backend, FinanceFlow simplifies personal finance management by allowing users to track their spending, set budget limits, and gain insights into their financial habits.
 
+***New FinanceFlow Preview***
+![New FinanceFlow Preview](./frontend/src/Assets/previewNew.png)
+***Old FinanceFlow Preview***
+![Old FinanceFlow Preview](./frontend/src/Assets/previewOld.png)
+
+**Live Demo:** [FinanceFlow](https://finance-flow-xuyt.onrender.com/#/)
+
 ---
 
 ## Features
@@ -210,7 +217,6 @@ FinanceFlow is an open-source project, and contributions are welcome! If you'd l
 - **Multi-User Support**: Allow families or teams to share budgets and expenses.
 - **Mobile App**: Develop a cross-platform mobile app using React Native.
 - **Export Data**: Allow users to export their budget and expense data as CSV or PDF.
-- **Dark Mode**: Add a dark mode option for better user experience.
 
 ---
 
@@ -222,7 +228,7 @@ FinanceFlow is an open-source project, and contributions are welcome! If you'd l
 
 ## Author
 
-- **[Rudra-Xi](https://github.com/rudra-xi)**: Developer and maintainer of FinanceFlow.
+- **[rudra-xi](https://github.com/rudra-xi)**: Developer and maintainer of FinanceFlow.
 
 ---
 
