@@ -4,8 +4,9 @@ import { Footer, Navbar } from "./Components";
 import { About, Budget, Expense, SignIn } from "./Pages";
 
 function App() {
+  // Remove bg-primary and text-secondary classes from the <div>
   return (
-    <div className="bg-primary px-5 pt-28 text-secondary min-h-screen font-inter">
+    <div className="px-5 pt-28 min-h-screen font-inter"> 
       <Toaster position="top-center" reverseOrder={false} />
       <Navbar />
 

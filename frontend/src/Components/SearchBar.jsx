@@ -10,7 +10,7 @@ function SearchBar({ onSearch }) {
 					type="text"
 					placeholder="Search"
 					onChange={(e) => onSearch(e.target.value)} // Call onSearch when the input changes
-					className="flex-1 outline-none bg-inherit text-sm"
+					className="flex-1 outline-none text-sm"
 				/>
 				<img src={search_icon} alt="search icon" className="w-5" />
 			</div>

@@ -117,7 +117,7 @@ function Expense() {
 					<select
 						value={sortOption}
 						onChange={(e) => handleSort(e.target.value)}
-						className="flex border-2 bg-primary outline-none border-accent text-sm p-2 h-10"
+						className="flex border-2 outline-none border-accent text-sm p-2 h-10"
 					>
 						<option value="new">Newest</option>
 						<option value="date">Sort by Date</option>

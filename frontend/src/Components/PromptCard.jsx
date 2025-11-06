@@ -14,8 +14,8 @@ function PromptCard({ onConfirm, onCancel }) {
 	};
 
 	return (
-		<div className="bg-primary w-[450px] border-2 border-accent grid grid-cols-6 gap-2 py-3 px-5 text-sm">
-			<h1 className="text-center text-secondary text-xl font-bold col-span-6">
+		<div className=" w-[450px] border-2 border-accent grid grid-cols-6 gap-2 py-3 px-5 text-sm">
+			<h1 className="text-center text-xl font-bold col-span-6">
 				Update Budget
 			</h1>
 			<input
@@ -23,7 +23,7 @@ function PromptCard({ onConfirm, onCancel }) {
 				placeholder="Enter new budget total"
 				value={newBudget}
 				onChange={(e) => setNewBudget(e.target.value)}
-				className="text-slate-600 placeholder:text-secondary placeholder:opacity-50 border border-accent col-span-6 resize-none outline-none p-2 transition-all duration-300 appearance-none"
+				className="placeholder:text-secondary placeholder:opacity-50 border border-accent col-span-6 resize-none outline-none p-2 transition-all duration-300 appearance-none"
 			/>
 			<span className="col-span-2"></span>
 			<button
